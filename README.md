@@ -17,8 +17,11 @@ git clone git@github.com:fnematov/simple-todo.git
 'password' => 'your_db_password'
 ```
 
-### Create default tables
+### Create database and default tables
 
+```sql
+CREATE DATABASE todo;
+```
 ```sql
 CREATE SEQUENCE todos_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
 CREATE TABLE "public"."todos"
@@ -66,11 +69,16 @@ server {
     }
 
     location ~ \.php$ {
-        fastcgi_pass 127.0.0.1:9001;
+        fastcgi_pass 127.0.0.1:9000;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     }
 }
+```
+
+### Restart nginx
+```bash
+nginx -s reload
 ```
 
 ### And go to

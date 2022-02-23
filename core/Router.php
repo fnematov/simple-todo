@@ -1,8 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\NoReturn;
-use JetBrains\PhpStorm\Pure;
-
 class Router
 {
     public static function handle()
@@ -42,7 +39,7 @@ class Router
         return $route;
     }
 
-    #[Pure] public static function current(array $params = []): string
+    public static function current(array $params = []): string
     {
         $route = Request::get('r');
         $hasQuestionLabel = false;
@@ -59,7 +56,7 @@ class Router
         return $nextRoute;
     }
 
-    #[NoReturn] public static function redirect(string $name)
+    public static function redirect(string $name)
     {
         header("Location: ?r=" . $name);
         exit();

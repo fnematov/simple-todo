@@ -1,7 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\Pure;
-
 class Request
 {
     public static function getMethod(): string
@@ -30,7 +28,7 @@ class Request
         return isset($_POST[$name]) ? htmlspecialchars($_POST[$name]) : $default;
     }
 
-    #[Pure] public static function isPost(): bool
+    public static function isPost(): bool
     {
         return self::getMethod() === 'post';
     }

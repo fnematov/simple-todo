@@ -1,9 +1,7 @@
 <?php
 
-use JetBrains\PhpStorm\NoReturn;
-
 if (!function_exists('dd')) {
-    #[NoReturn] function dd(...$args)
+    function dd(...$args)
     {
         echo "<pre>";
         foreach ($args as $arg) {
