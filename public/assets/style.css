@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    background: #eee;
+    padding: 15px;
+    border: 1px solid #a1a1a1;
+    margin: 0 auto;
+}
+
+.sort-block {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sort-block a {
+    text-decoration: none;
+    font-family: initial;
+}
+
+.sort-block a.active.asc:after {
+    content: "\25be";
+}
+
+.sort-block a.active.desc:after {
+    content: "▴";
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.tasks {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.tasks li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #325369;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+.tasks .creator {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.pagination ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.pagination ul li:first-child a {
+    margin-left: 0;
+}
+
+.pagination ul li a {
+    border: 1px solid #a1a1a1;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.pagination ul li a.active {
+    background: #70b9e8;
+    border-color: #38a1e8;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    font-size: 14px;
+    padding: 8px 15px;
+    border: 1px solid #38a1e8;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+    border-radius: 3px;
+    border: 1px solid #a1a1a1;
+    padding: 8px 5px;
+}
+
+.task.stroked {
+    text-decoration: line-through;
+}
+
+.errors {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: crimson;
+}
+
+.errors p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
