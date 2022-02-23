@@ -122,7 +122,7 @@ class Database
     private function convertToModel($result, bool $single = false, $count = null)
     {
         if ($single) {
-            return $result ? $this->newModel([...$result, 'exists' => true]) : null;
+            return $result ? $this->newModel(array_merge($result, ['exists' => true])) : null;
         } else {
             $res = new stdClass();
             $res->items = [];

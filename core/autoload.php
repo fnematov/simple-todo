@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/../config/index.php';
 
-require_once 'helpers.php';
 require_once 'Request.php';
 require_once 'Router.php';
 require_once 'Controller.php';
