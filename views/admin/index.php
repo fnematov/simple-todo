@@ -20,7 +20,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <?php if ($todos->total_pages > 0): ?>
+        <?php if ($todos->total_pages > 1): ?>
             <div class="pagination">
                 <ul>
                     <?php for ($i = 1; $i <= $todos->total_pages; $i++): ?>
