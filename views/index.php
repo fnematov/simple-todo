@@ -40,17 +40,19 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <div class="pagination">
-            <ul>
-                <?php for ($i = 1; $i <= $todos->total_pages; $i++): ?>
-                    <li>
-                        <a href="<?= Router::current(['page' => $i]) ?>"
-                           class="<?= $todos->current_page == $i ? 'active' : '' ?>">
-                            <?= $i; ?>
-                        </a>
-                    </li>
-                <?php endfor; ?>
-            </ul>
-        </div>
+        <?php if ($todos->total_pages > 0): ?>
+            <div class="pagination">
+                <ul>
+                    <?php for ($i = 1; $i <= $todos->total_pages; $i++): ?>
+                        <li>
+                            <a href="<?= Router::current(['page' => $i]) ?>"
+                               class="<?= $todos->current_page == $i ? 'active' : '' ?>">
+                                <?= $i; ?>
+                            </a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
     <?php endif; ?>
 </div>

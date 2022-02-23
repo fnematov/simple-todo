@@ -30,7 +30,7 @@ CREATE TABLE "public"."todos"
     "name"    character varying,
     "email"   character varying,
     "content" text,
-    "status"  boolean DEFAULT false                   NOT NULL,
+    "status"  boolean DEFAULT false,
     CONSTRAINT "todos_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
