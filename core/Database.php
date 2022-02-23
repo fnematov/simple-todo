@@ -40,7 +40,7 @@ class Database
         $this->orderBy = [];
     }
 
-    public function setModel(Model $model): static
+    public function setModel(Model $model): self
     {
         $this->model = $model;
         $this->tableName = $model->getTable();
@@ -52,30 +52,30 @@ class Database
         return $this->model->instance($attributes);
     }
 
-    public function select(array $columns = ["*"]): static
+    public function select(array $columns = ["*"]): self
     {
         $this->select = $columns;
         return $this;
     }
 
-    public function where(string $column, string $condition = null, string $value = null): static
+    public function where(string $column, string $condition = null, string $value = null): self
     {
         $this->where[] = [$column, $condition, $value];
         return $this;
     }
 
-    public function orderBy(string $column, string $direction = 'ASC'): static
+    public function orderBy(string $column, string $direction = 'ASC'): self
     {
         $this->orderBy[] = [$column, $direction];
         return $this;
     }
 
-    public function get(): stdClass
+    public function get()
     {
         return $this->buildSelectQuery()->execute();
     }
 
-    public function paginate($perPage = 12, $page = 1): stdClass
+    public function paginate($perPage = 12, $page = 1)
     {
         $this->limit = $perPage;
         $this->offset = ($page - 1) * $perPage;
@@ -83,7 +83,7 @@ class Database
         return $this->buildSelectQuery()->execute();
     }
 
-    public function one(): Model|null
+    public function one()
     {
         return $this->buildSelectQuery()->execute(true);
     }
@@ -100,7 +100,7 @@ class Database
         $this->execute();
     }
 
-    private function execute(bool $single = false): stdClass|Model|null
+    private function execute(bool $single = false)
     {
         $pdo = $this->connection->prepare($this->sql);
         $pdo->setFetchMode(PDO::FETCH_ASSOC);
@@ -119,7 +119,7 @@ class Database
         return $this->convertToModel($result, $single, $totalItemsCount);
     }
 
-    private function convertToModel($result, bool $single = false, $count = null): stdClass|Model|null
+    private function convertToModel($result, bool $single = false, $count = null)
     {
         if ($single) {
             return $result ? $this->newModel([...$result, 'exists' => true]) : null;
@@ -138,7 +138,7 @@ class Database
         }
     }
 
-    private function buildSelectQuery(): static
+    private function buildSelectQuery(): self
     {
         $this->buildSelect();
         $this->buildWhere();

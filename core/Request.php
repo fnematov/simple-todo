@@ -13,7 +13,7 @@ class Request
         return $method;
     }
 
-    public static function get($name = null, $default = null): string|array|null
+    public static function get($name = null, $default = null)
     {
         return isset($_GET[$name]) ? htmlspecialchars($_GET[$name]) : $default;
     }
@@ -23,7 +23,7 @@ class Request
         return $_GET;
     }
 
-    public static function post($name = null, $default = null): string|array|null
+    public static function post($name = null, $default = null)
     {
         return isset($_POST[$name]) ? htmlspecialchars($_POST[$name]) : $default;
     }

@@ -2,7 +2,7 @@
 
 trait Authenticate
 {
-    public static function guest(): bool
+    public static function guest()
     {
         return !isset($_SESSION['user']);
     }

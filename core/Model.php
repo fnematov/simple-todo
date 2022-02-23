@@ -34,7 +34,7 @@ class Model
         }
     }
 
-    public function instance(array $attributes = []): static
+    public function instance(array $attributes = []): self
     {
         return new static($attributes);
     }
