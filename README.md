@@ -61,7 +61,7 @@ server {
     access_log  /var/log/nginx/todoapi.access.log;
     error_log  /var/log/nginx/todoapi.error.log;
 
-    root   /path/to/your/project;
+    root   /path/to/your/project/public/folder;
 
     location / {
         index  index.php index.html index.htm;
