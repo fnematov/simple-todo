@@ -7,15 +7,14 @@ git clone git@github.com:fnematov/simple-todo.git
 composer update
 ```
 
-### Update configs from config/index.php file (Only postgresql supports)
+### Move .env.example file to .env file and change property values (Only postgresql supports)
 
-```php
-'driver' => 'pgsql', //supports only postgresql
-'host' => 'localhost',
-'port' => 5432,
-'dbname' => 'db_name',
-'username' => 'your_db_username',
-'password' => 'your_db_password'
+```dotenv
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=todo
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
 ```
 
 ### Create database and default tables
