@@ -1,3 +1,9 @@
+<?php
+
+use App\Core\Router;
+use App\Models\User;
+
+?>
 <div class="container footer">
     <a href="<?= Router::to('admin/index') ?>">Go to admin</a>
     <?php if (!User::guest()): ?>

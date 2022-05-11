@@ -1,0 +1,16 @@
+{
+    "name": "fnematov/simple-todo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "App\\Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fnematov",
+            "email": "mr.nematov91@gmail.com"
+        }
+    ],
+    "require": {}
+}

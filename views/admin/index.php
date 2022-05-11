@@ -1,3 +1,6 @@
+<?php
+use App\Core\Router;
+?>
 <div class="container">
     <div class="header">Welcome to admin panel</div>
     <?php if (count($todos->items) > 0): ?>

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Router
 {
     public static function handle()
@@ -15,7 +17,7 @@ class Router
             if (isset($routeParams[0])) $controller = $routeParams[0];
             if (isset($routeParams[1])) $action = $routeParams[1];
         }
-        $controllerName = ucfirst($controller) . 'Controller';
+        $controllerName = '\App\Controllers\\' . ucfirst($controller) . 'Controller';
         if (class_exists($controllerName)) {
             $controller = new $controllerName;
             if (method_exists($controller, $action)) {

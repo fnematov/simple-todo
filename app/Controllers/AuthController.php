@@ -1,5 +1,12 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Core\Request;
+use App\Core\Router;
+use App\Models\User;
+
 class AuthController extends Controller
 {
     public function login()

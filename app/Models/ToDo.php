@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Models;
+
+use App\Core\Model;
+
 class ToDo extends Model
 {
     protected string $table = 'todos';

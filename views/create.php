@@ -1,3 +1,8 @@
+<?php
+
+use App\Core\Router;
+
+?>
 <div class="container">
     <div class="header">Create tasks</div>
     <div class="content">

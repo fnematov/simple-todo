@@ -1,5 +1,13 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Core\Request;
+use App\Core\Router;
+use App\Models\ToDo;
+use App\Models\User;
+
 class AdminController extends Controller
 {
     public function __construct()
@@ -27,7 +35,7 @@ class AdminController extends Controller
         if (Request::isPost()) {
             $todo->fill([
                 'content' => Request::post('content'),
-                'status' => Request::post('status')
+                'status' => Request::post('status') ?? 0
             ]);
             $todo->save();
             Router::redirect('admin/index');

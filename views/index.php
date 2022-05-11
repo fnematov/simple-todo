@@ -1,3 +1,9 @@
+<?php
+
+use App\Core\Request;
+use App\Core\Router;
+
+?>
 <div class="container">
     <div class="header">
         <div class="title">

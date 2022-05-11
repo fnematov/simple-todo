@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Traits;
+
+use App\Core\Model;
+
 trait Authenticate
 {
     public static function guest()

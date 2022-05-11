@@ -1,5 +1,12 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\Controller;
+use App\Core\Request;
+use App\Core\Router;
+use App\Models\ToDo;
+
 class SiteController extends Controller
 {
     public function index()
@@ -20,6 +27,7 @@ class SiteController extends Controller
                 'name' => Request::post('name'),
                 'email' => Request::post('email'),
                 'content' => Request::post('content'),
+                'status' => 0
             ]);
             $model->save();
             Router::redirect("site/index");

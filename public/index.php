@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
+use App\Core\Router;
 
-require __DIR__.'/../core/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 Router::handle();
